@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shop Viva, Live Viva!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- this is where we refer the css file from src/main/resources/static/main.css -->
+    <link th:href="@{/main.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="navbar-placeholder" class="h-24"></div>
+<div class="w-2/3 mx-auto flex flex-row mt-10 gap-10">
+    <div class="w-1/3 flex flex-col justify-center items-start p-30">
+        <h1 class="font-serif text-zinc-800 text-4xl text-center leading-relaxed w-full">
+            🌱 Get Ready for <br/>
+            Prime Day Deals!
+        </h1>
+        <p class="font-serif text-zinc-800 text-xl text-center leading-normal mt-5 w-full">
+            Become a Prime member now and <br/>
+            unlock up to 50% off during our <br/>
+            Prime Day extravaganza! <br/>
+            <b>Ends Sunday</b>
+        </p>
+        <a href="#" class="text-white text-2xl self-center font-medium whitespace-nowrap rounded bg-green-500 mt-14 mb-5 px-11 py-5">
+            SHOP NOW
+        </a>
+    </div>
+
+    <div id="gallery" class="relative w-2/3" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            <span class="sr-only">Next</span>
+        </span>
+        </button>
+    </div>
+
+</div>
+
+<div class="text-center mt-24">
+    <h2 class="text-4xl font-medium leading-tight">Top Products</h2>
+</div>
+
+<div class="mt-16 mx-auto px-5 w-3/5">
+    <ul class="flex flex-wrap flex-start">
+        <li th:each="item : ${itemList}" class="w-1/4 p-4 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+            <div class="flex flex-col items-stretch rounded-lg overflow-hidden">
+                <img src="img/_/iphone15.jpeg" class="object-cover w-full" loading="lazy">
+                <div class="bg-white flex flex-col items-stretch p-7">
+                    <div class="text-lg font-medium leading-7 mb-2">
+                        <span th:text="${item.commodityName}">Commodity Name</span>
+                    </div>
+                    <div class="text-green-600 text-2xl font-medium mt-1 text-right">
+                        <span th:text="'$'+${item.price}"></span>
+                    </div>
+                    <div class='flex justify-between items-center mt-4'>
+                        <div><b class='text-green-600'> 100+ </b> Sold</div>
+                        <div><b class='text-green-600' th:text="${item.availableStock}"></b> in stock</div>
+                    </div>
+                </div>
+                <a class='bg-green-600 hover:bg-green-800 text-white text-center py-4 px-4 rounded-lg block' th:href="@{'/test/item/'+${item.commodityId}}" target='_blank'>Buy Now</a>
+            </div>
+        </li>
+    </ul>
+
+    <p class="text-center text-xl font-medium leading-7 tracking-normal self-center mt-7"> More Top Products >></p>
+</div>
+
+<div class="bg-green-300 bg-opacity-10 flex w-full flex-col justify-center items-center mt-32 px-16 py-12 max-md:max-w-full max-md:mt-10 max-md:px-5">
+    <div class="flex w-full max-w-[1111px] flex-col items-stretch mt-14 mb-10 max-md:max-w-full max-md:mt-10">
+        <h1 class="text-sky-950 text-center text-4xl font-medium leading-[57.6px] tracking-tighter self-center"> Testimonials </h1>
+        <p class="text-slate-500 text-center text-lg font-medium leading-7 tracking-normal self-center mt-7"> Some quotes from our happy customers </p>
+        <div class="mt-9 px-px max-md:max-w-full">
+            <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                <div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
+                    <div class="shadow-lg bg-white flex grow flex-col w-full pl-16 pr-14 py-9 rounded-md max-md:mt-8 max-md:px-5">
+                        <img loading="lazy" srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&"class="aspect-square object-contain object-center w-[84px] overflow-hidden self-center max-w-full" />
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1d14348ffd7c3704c60090ed3ee5e03d5fe0168c5c9cd86192ee905c320e6cc?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-[6.08] object-contain object-center w-[146px] overflow-hidden self-center max-w-full mt-3.5" />
+                        <h2 class="text-slate-800 text-center text-2xl font-medium leading-7 self-stretch mt-7"> “I love it! No more air fresheners” </h2>
+                        <p class="text-zinc-500 text-center text-lg self-center mt-5"> Luisa </p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
+                    <div class="shadow-lg bg-white flex grow flex-col w-full pl-20 pr-16 py-9 rounded-md max-md:mt-8 max-md:px-5">
+                        <img loading="lazy" srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&"class="aspect-square object-contain object-center w-[84px] overflow-hidden self-center max-w-full" />
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/befb25a7196e5b6620151489e209487757aa47c312b89dcdde26644377acac6b?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-[6.08] object-contain object-center w-[146px] overflow-hidden self-center max-w-full mt-3.5" />
+                        <h2 class="text-slate-800 text-center text-2xl font-medium leading-7 self-stretch mt-7"> “Raccomended for everyone” </h2>
+                        <p class="text-zinc-500 text-center text-lg self-center mt-3.5"> Edoardo </p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
+                    <div class="shadow-lg bg-white flex grow flex-col w-full pl-14 pr-11 py-9 rounded-md max-md:mt-8 max-md:px-5">
+                        <img loading="lazy" srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&"class="aspect-square object-contain object-center w-[84px] overflow-hidden self-center max-w-full" />
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b115dff4babcf267d3042641552fb52a79318189dd53945216980ac908a8111?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-[6.08] object-contain object-center w-[146px] overflow-hidden self-center max-w-full mt-3.5" />
+                        <h2 class="text-slate-800 text-center text-2xl font-medium leading-7 self-stretch mt-7"> “Looks very natural, the smell is awesome” </h2>
+                        <p class="text-zinc-500 text-center text-lg self-center mt-5"> Mart </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-neutral-800 flex flex-col justify-center items-center px-16 py-12 max-md:max-w-full max-md:px-5">
+    <div class="flex w-full max-w-[1110px] flex-col items-stretch mt-2.5 mb-12 max-md:max-w-full max-md:mb-10">
+        <div class="bg-white shrink-0 h-px max-md:max-w-full"></div>
+        <div class="flex w-full justify-between gap-5 pr-11 items-start max-md:max-w-full max-md:flex-wrap max-md:pr-5">
+            <div class="flex flex-col items-stretch gap-y-8 mt-14">
+                <img loading="lazy" src="img/_/vivavend-white.png" class="aspect-[2.5] object-contain object-center w-2/3 justify-center items-center overflow-hidden z-[1]" />
+                <div class="text-white text-xl leading-6 tracking-tight -mt-1.5">Shop Viva, Live Viva!</div>
+            </div>
+            <div class="mt-14 self-end max-md:max-w-full max-md:mt-10">
+                <form>
+                    <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                        <div class="flex flex-col items-stretch w-[30%] max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">Discovery</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">New season</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Most searched</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Most selled</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-[30%] ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">About</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Help</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Shipping</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Affiliate</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-2/5 ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7 whitespace-nowrap">Info</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Contact us</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Privacy Policies</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Terms & Conditions</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script th:inline="javascript">
+    var user = [[${user}]];
+    $(document).ready(function(){
+        if(user != null) {
+            var userId = user.userId;
+            $('#navbar-placeholder').load('/loggedInHeader/' + userId);
+        } else {
+            $('#navbar-placeholder').load('/header');
+        }
+    });
+</script>
+
+
+</body>
+</html>

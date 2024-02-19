@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shop Viva, Live Viva!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- this is where we refer the css file from src/main/resources/static/main.css -->
+    <link th:href="@{/main.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="navbar-placeholder" class="h-24"></div>
+<div class="gap-5 flex mx-auto my-10 w-3/5 max-md:flex-col max-md:items-stretch max-md:gap-0">
+    <div class="flex flex-col items-stretch w-1/2 px-5 max-md:w-full max-md:ml-0">
+        <div class="w-full">
+            <div id="gallery" class="relative object-contain object-center overflow-hidden" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative overflow-hidden rounded-lg md:h-96">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/img/_/iphone15.jpeg" class="absolute block max-h-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="/img/_/iphone15.jpeg" class="absolute block max-h-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/img/_/iphone15.jpeg" class="absolute block max-h-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                <span class="sr-only">Previous</span>
+            </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                <span class="sr-only">Next</span>
+            </span>
+                </button>
+            </div>
+        </div>
+        <div class="text-center font-medium leading-7 tracking-tighter self-center mt-6 max-md:max-w-full">
+            <div class="text-sm text-neutral-800"> Up To $250 Off with Code BIGSALE </div>
+            <div class="pt-3 text-xl font-bold text-green-400">🚚 FREE SHIPPING</div>
+        </div>
+    </div>
+    <div class="flex flex-col items-stretch w-1/2 ml-5 max-md:w-full max-md:ml-0">
+        <div class="flex flex-col self-stretch items-stretch my-auto px-5 max-md:max-w-full max-md:mt-10">
+            <div class="justify-center text-neutral-800 text-3xl font-medium leading-[57.72px] tracking-tighter max-md:max-w-full" th:text="${commodity.commodityName}"></div>
+            <div class="justify-center text-green-600 text-2xl font-semibold leading-[57.72px] tracking-tighter pt-5" th:text="'$'+${commodity.price}"></div>
+            <div class="mt-7 max-md:max-w-full">
+                <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                    <div class="flex flex-col items-stretch w-[28%] max-md:w-full max-md:ml-0">
+                        <div class="flex flex-col items-stretch items-start mt-1 max-md:mt-10">
+                            <div class="justify-center items-stretch items-start bg-white flex flex-col pt-1.5">
+                                <div class="text-neutral-800 text-center text-lg leading-6 tracking-tighter">Quantity</div>
+                                <div class="text-neutral-400 text-center text-lg leading-6 tracking-tighter whitespace-nowrap border border-[color:var(--green,#56B280)] justify-center items-stretch mt-2 px-4 py-2.5 border-solid max-w-24">
+                                    <span class="text-green-400"> + </span> 1 <span class="text-neutral-400"> - </span>
+                                </div>
+                            </div>
+                            <div class="justify-center items-stretch text-center pt-8"><b class='text-green-600' th:text="${commodity.availableStock}"></b> in stock</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-stretch w-[72%] ml-5 max-md:w-full max-md:ml-0">
+                        <div class="flex grow flex-col items-stretch max-md:mt-10">
+                            <div class="justify-center items-stretch bg-white flex w-full flex-col">
+                                <div class="flex items-stretch items-center gap-5 ml-5 self-start max-md:ml-2.5">
+                                    <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2 ">
+                                    <label for="default-radio-1" class="ms-2 text-neutral-800 text-base leading-4 tracking-tighter grow shrink basis-auto">One time purchase</label>
+                                </div>
+                                <div class="border flex w-full flex-col items-stretch mt-6 px-5 py-5 rounded-lg border-solid border-neutral-200 max-md:pr-5">
+                                    <div class="flex items-stretch items-center justify-between gap-3.5">
+                                        <input checked id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2">
+                                        <label for="default-radio-2" class="ms-2 text-neutral-800 text-base leading-4 tracking-tighter grow shrink basis-auto">Subscribe and delivery every</label>
+                                        <div class="border flex items-stretch items-center justify-between gap-1.5 px-2 py-1.5 border-solid border-neutral-200">
+                                            <div class="text-neutral-800 text-sm leading-4 tracking-tighter grow whitespace-nowrap">4 weeks</div>
+                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3fcb37a107dbc647c1d825de1e75f3f29932bf30d394c30af732b0d9055528bb?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-square object-contain object-center w-2.5 overflow-hidden shrink-0 max-w-full" />
+                                        </div>
+                                    </div>
+                                    <div class="text-green-400 text-sm font-light leading-4 mt-3">
+                                        <span class="text-base text-zinc-500">Subscribe now and get the 10% of discount on every recurring order. The discount will be applied at checkout.</span>
+                                        <span class="text-green-400">See details</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border flex w-full flex-col items-stretch mt-6 px-5 py-5 rounded-lg border-solid border-neutral-200 max-md:pr-5">
+                <span class="text-base text-zinc-500" th:text="${commodity.commodityDesc}"></span>
+            </div>
+            <div>
+                <div class="items-stretch items-center rounded bg-green-600 flex justify-between gap-4 mt-10 py-2.5 px-20 max-w-96 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
+                    <div class="text-white text-center text-xl grow whitespace-nowrap"> + Add to cart</div>
+                </div>
+                <a th:if="${user != null}" th:href="@{'/test/commodity/buy/' + ${user.userId} + '/' + ${commodity.commodityId}}" target="_blank" class="items-stretch items-center rounded bg-green-600 flex justify-between gap-4 mt-4 py-2.5 px-20 max-w-96 mx-auto hover:bg-green-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/>
+                    </svg>
+                    <div class="text-white text-center text-xl grow whitespace-nowrap">
+                        Buy now
+                    </div>
+                </a>
+                <a th:if="${user == null}" href="/testLogin" class="items-stretch items-center rounded bg-green-600 flex justify-between gap-4 mt-4 py-2.5 px-20 max-w-96 mx-auto hover:bg-green-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/>
+                    </svg>
+                    <div class="text-white text-center text-xl grow whitespace-nowrap">
+                        Buy now
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-neutral-800 flex flex-col justify-center items-center px-16 py-12 max-md:max-w-full max-md:px-5">
+    <div class="flex w-full max-w-[1110px] flex-col items-stretch mt-2.5 mb-12 max-md:max-w-full max-md:mb-10">
+        <div class="bg-white shrink-0 h-px max-md:max-w-full"></div>
+        <div class="flex w-full justify-between gap-5 pr-11 items-start max-md:max-w-full max-md:flex-wrap max-md:pr-5">
+            <div class="flex flex-col items-stretch gap-y-8 mt-14">
+                <img loading="lazy" src="/img/_/vivavend-white.png" class="aspect-[2.5] object-contain object-center w-2/3 justify-center items-center overflow-hidden z-[1]" />
+                <div class="text-white text-xl leading-6 tracking-tight -mt-1.5">Shop Viva, Live Viva!</div>
+            </div>
+            <div class="mt-14 self-end max-md:max-w-full max-md:mt-10">
+                <form>
+                    <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                        <div class="flex flex-col items-stretch w-[30%] max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">Discovery</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">New season</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Most searched</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Most selled</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-[30%] ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">About</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Help</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Shipping</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Affiliate</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-2/5 ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7 whitespace-nowrap">Info</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Contact us</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Privacy Policies</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Terms & Conditions</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script th:inline="javascript">
+    var user = [[${user}]];
+    $(document).ready(function(){
+        if(user != null) {
+            var userId = user.userId;
+            $('#navbar-placeholder').load('/loggedInHeader/' + userId);
+        } else {
+            $('#navbar-placeholder').load('/header');
+        }
+    });
+</script>
+</body>
+</html>

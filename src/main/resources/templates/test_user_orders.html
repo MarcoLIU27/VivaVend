@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shop Viva, Live Viva!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- this is where we refer the css file from src/main/resources/static/main.css -->
+    <link th:href="@{/main.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="navbar-placeholder" class="h-24"></div>
+<div class="gap-y-12 flex flex-col items-center mx-auto my-10 w-3/5">
+    <h2 class="text-3xl font-bold mb-4">My Orders</h2>
+    <div th:each="entry : ${ordersMap}" class="flex justify-center bg-white rounded-lg border border-solid border-green-600 overflow-hidden w-full h-48 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+        <div class="grid grid-cols-6 grid-row-3 gap-8 h-48 px-5 py-3">
+            <div class="flex items-center justify-center col-span-1">
+                <img src="/img/_/iphone15.jpeg" alt="Commodity Image" class="w-40 object-cover rounded-full"/>
+            </div>
+            <div class="grid items-center justify-center col-span-1">
+                <div class="row-span-1 text-sm text-center font-medium text-gray-900">Name</div>
+                <div class="row-span-2 mt-1 text-center text-sm text-gray-500" th:text="${entry.value.commodityName}"></div>
+            </div>
+            <div class="grid items-center justify-center col-span-1">
+                <div class="row-span-1 text-sm text-center font-medium text-gray-900">Amount</div>
+                <div class="row-span-2 mt-1 text-center text-sm text-gray-500" th:text="${entry.key.orderAmount}"></div>
+            </div>
+            <div class="grid items-center justify-center col-span-1">
+                <div class="row-span-1 text-sm text-center font-medium text-gray-900">Order No</div>
+                <div class="row-span-2 mt-1 text-center text-sm text-gray-500" th:text="${entry.key.orderNo}"></div>
+            </div>
+            <div class="grid items-center justify-center col-span-1">
+                <div class="row-span-1 text-sm text-center font-medium text-gray-900">Status</div>
+                <div class="row-span-2 mt-1 text-center text-sm text-gray-500" th:text="${entry.key.orderStatus}"></div>
+            </div>
+
+
+            <div class="grid items-center justify-center col-span-1">
+                <div class="row-span-1 text-sm text-center font-medium text-gray-900">Created</div>
+                <div class="row-span-2 mt-1 text-center text-sm text-gray-500" th:text="${#dates.format(entry.key.createTime, 'dd-MM-yyyy')}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="flex items-center justify-center space-x-2 py-5">
+    <a th:href="@{'/test/users/orders/' + ${user.userId} + '?page=' + ${pageInfo.pageNum - 1} + '&size=' + ${pageInfo.pageSize}}" th:if="${!pageInfo.isFirstPage}" class="px-4 py-2 text-white text-xl rounded-full bg-green-500 hover:bg-green-800 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50" >Last Page</a>
+    <div class="text-xl text-white space-x-2">
+        <a class="px-4 py-2 rounded-full " th:each="pageNum : ${#numbers.sequence(1, pageInfo.pages)}" th:text="${pageNum}" th:href="@{'/test/users/orders/' + ${user.userId} + '?page=' + ${pageNum} + '&size=' + ${pageInfo.pageSize}}" th:classappend="${pageNum == pageInfo.pageNum ? 'bg-green-600 font-semibold' : 'bg-green-500 hover:bg-green-800 focus:outline-none focus:ring focus:ring-green-400 focus:ring-opacity-50'}" ></a>
+    </div>
+    <a th:href="@{'/test/users/orders/' + ${user.userId} + '?page=' + ${pageInfo.pageNum + 1} + '&size=' + ${pageInfo.pageSize}}" th:if="${!pageInfo.isLastPage}" class="px-4 py-2 text-white text-xl rounded-full bg-green-500 hover:bg-green-800 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50" >Next Page</a>
+</div>
+
+
+
+<div class="bg-neutral-800 flex flex-col justify-center items-center px-16 py-12 max-md:max-w-full max-md:px-5">
+    <div class="flex w-full max-w-[1110px] flex-col items-stretch mt-2.5 mb-12 max-md:max-w-full max-md:mb-10">
+        <div class="bg-white shrink-0 h-px max-md:max-w-full"></div>
+        <div class="flex w-full justify-between gap-5 pr-11 items-start max-md:max-w-full max-md:flex-wrap max-md:pr-5">
+            <div class="flex flex-col items-stretch gap-y-8 mt-14">
+                <img loading="lazy" src="/img/_/vivavend-white.png" class="aspect-[2.5] object-contain object-center w-2/3 justify-center items-center overflow-hidden z-[1]" />
+                <div class="text-white text-xl leading-6 tracking-tight -mt-1.5">Shop Viva, Live Viva!</div>
+            </div>
+            <div class="mt-14 self-end max-md:max-w-full max-md:mt-10">
+                <form>
+                    <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                        <div class="flex flex-col items-stretch w-[30%] max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">Discovery</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">New season</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Most searched</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Most selled</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-[30%] ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">About</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Help</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Shipping</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Affiliate</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-2/5 ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7 whitespace-nowrap">Info</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Contact us</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Privacy Policies</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Terms & Conditions</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script th:inline="javascript">
+    var user = [[${user}]];
+    $(document).ready(function(){
+        if(user != null) {
+            var userId = user.userId;
+            $('#navbar-placeholder').load('/loggedInHeader/' + userId);
+        } else {
+            $('#navbar-placeholder').load('/header');
+        }
+    });
+</script>
+</body>
+</html>

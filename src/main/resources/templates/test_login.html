@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shop Viva, Live Viva!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- this is where we refer the css file from src/main/resources/static/main.css -->
+    <link th:href="@{/main.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+</head>
+<header id="navbar-placeholder"></header>
+<body>
+<div class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
+        <h2 class="text-2xl font-bold text-center mb-4">Already a member?</h2>
+        <div class="login-top mb-4">
+            <h1 class="text-xl font-bold text-center mb-4">Log In</h1>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="username" class="w-full p-3 rounded mb-4 border border-gray-300 focus:outline-none focus:border-blue-500"/>
+                <input type="password" name="password" placeholder="password" class="w-full p-3 rounded mb-4 border border-gray-300 focus:outline-none focus:border-blue-500"/>
+                <div class="flex items-center justify-between mb-4">
+                    <a href="#" class="text-blue-500 text-sm">Forgot Password</a>
+                    <input type="submit" value="Login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"/>
+                </div>
+            </form>
+        </div>
+        <div class="text-center">
+            <h3 class="text-sm">New User?&nbsp;<a href="/register" class="text-blue-500">Register</a></h3>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#navbar-placeholder').load('/header');
+    });
+</script>
+
+</body>
+</html>

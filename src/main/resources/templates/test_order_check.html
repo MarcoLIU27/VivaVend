@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shop Viva, Live Viva!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- this is where we refer the css file from src/main/resources/static/main.css -->
+    <link th:href="@{/main.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <meta th:if="${refresh != null}" http-equiv="refresh" content="1">
+</head>
+
+<body>
+<div id="navbar-placeholder" class="h-24"></div>
+<div class="w-3/5 flex items-stretch mx-auto" th:if="${success} == 1">
+    <div class="w-1/2 flex flex-col items-stretch text-green-400">
+        <div class="flex items-stretch gap-2.5 text-base font-medium whitespace-nowrap tracking-tighter self-start mt-5">
+            <div class="text-neutral-800 leading-[160%] grow">Cart</div>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dde1e75bbf9b76b13a57a814cdf6f5dac088919ad788458cdac459a7e57efe6d?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-square object-contain object-center w-2.5 shrink-0 my-auto" />
+            <div class="text-neutral-500 leading-[160%]">Details</div>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c35a9d88a3f5a6451d48cb8a83df574cb00a19b8b424df1a5c2308f06157a52?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-square object-contain object-center w-2.5 shrink-0 my-auto" />
+            <div class="text-neutral-500 leading-[160%]">Shipping</div>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c35a9d88a3f5a6451d48cb8a83df574cb00a19b8b424df1a5c2308f06157a52?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-square object-contain object-center w-2.5 shrink-0 my-auto" />
+            <div class="text-neutral-500 leading-[160%]">Payment</div>
+        </div>
+        <div class="flex flex-col place-items-center mb-5" th:if="${order.orderStatus} == 1">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e281fac6505c47e3be3becf518cf18143249b7f96eb6f46f925bb9c0ca4079d?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-square object-contain object-center w-[100px] max-w-full mt-14 max-md:mt-10" />
+            <h1 class="justify-center text-neutral-800 text-center text-2xl font-medium leading-[57.72px] tracking-tighter mt-6">Order Created</h1>
+            <div class="justify-center text-center text-sm leading-4 mt-3.5">ORDER # <a th:text="${order.orderNo}"></a></div>
+            <div class="justify-center text-center text-sm leading-4 mt-3.5">Creat time: <a th:text="${order.createTime}"></a></div>
+            <div class="text-zinc-500 text-sm text-center font-light leading-4 mt-7 max-md:max-w-full">
+                <a>Your order has been created!</a><br/>
+                <a>Please pay the order in 5 minutes.</a>
+            </div>
+            <a th:href="@{'/test/commodity/payInfo/' + ${order.orderNo}}" class="text-white items-center text-xl font-medium rounded bg-green-400 flex justify-between gap-4 mt-11 px-11 py-2 max-w-96 mx-auto hover:bg-green-800">Pay Now</a>
+            <div class="text-center text-lg leading-6 tracking-tighter underline mt-9">Back to shopping</div>
+        </div>
+        <div class="flex flex-col place-items-center mb-5" th:if="${order.orderStatus} == 2">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e281fac6505c47e3be3becf518cf18143249b7f96eb6f46f925bb9c0ca4079d?apiKey=04b96a35d62641b58ada2792ce49196a&" class="aspect-square object-contain object-center w-[100px] max-w-full mt-14 max-md:mt-10" />
+            <h1 class="justify-center text-neutral-800 text-center text-2xl font-medium leading-[57.72px] tracking-tighter mt-6">Payment Confirmed</h1>
+            <div class="justify-center text-center text-sm leading-4 mt-3.5">ORDER # <a th:text="${order.orderNo}"></a></div>
+            <div class="justify-center text-center text-sm leading-4 mt-3.5">Creat time: <a th:text="${order.createTime}"></a></div>
+            <div class="justify-center text-center text-sm leading-4 mt-3.5">Pay time: <a th:text="${order.payTime}"></a></div>
+            <div class="text-zinc-500 text-sm text-center font-light leading-4 mt-7 px-5">
+                <a>Thank you for buying. Now that your order is confirmed it will be ready to ship in 2 days. Please check your inbox in the future for your order updates.</a>
+            </div>
+            <a th:href="@{/test}" class="text-white items-center text-xl font-medium rounded bg-green-400 flex justify-between gap-4 mt-11 px-11 py-2 max-w-96 mx-auto hover:bg-green-800">Back to shopping</a>
+            <div class="text-center text-lg leading-6 tracking-tighter underline mt-9">Print receipt</div>
+        </div>
+        <div class="flex flex-col place-items-center mb-5" th:if="${order.orderStatus} == 99">
+            <svg class="aspect-square object-contain object-center w-[100px] max-w-full mt-14 max-md:mt-10" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#d97d67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            <h1 class="justify-center text-neutral-800 text-center text-2xl font-medium leading-[57.72px] tracking-tighter mt-6">Order Cancelled</h1>
+            <div class="justify-center text-center text-sm leading-4 mt-3.5">ORDER # <a th:text="${order.orderNo}"></a></div>
+            <div class="text-zinc-500 text-sm text-center font-light leading-4 mt-7 max-md:max-w-full">
+                <a>Your order is cancelled due to payment overtime. <br/>
+                    Please order again.</a>
+            </div>
+            <a th:href="@{/test}" class="text-white items-center text-xl font-medium rounded bg-green-400 flex justify-between gap-4 mt-11 px-11 py-2 max-w-96 mx-auto hover:bg-green-800">Back to shopping</a>
+            <div class="text-center text-lg leading-6 tracking-tighter underline mt-9">Help Center</div>
+        </div>
+    </div>
+    <div class="w-1/2">
+        <div class="bg-zinc-100 flex grow flex-col w-full h-full px-16 py-12 items-start">
+            <div class="w-[411px] max-w-full mt-1.5">
+                <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                    <div class="flex flex-col items-stretch w-[48%] max-md:w-full max-md:ml-0">
+                        <img loading="lazy" srcset="/img/_/iphone15.jpeg" class="aspect-[1.2] object-contain object-center w-[163px] shrink-0 max-w-full grow max-md:mt-10" />
+                    </div>
+                    <div class="flex flex-col items-stretch w-[52%] ml-5 max-md:w-full max-md:ml-0">
+                        <div class="flex flex-col items-stretch tracking-tighter mt-5 max-md:mt-10">
+                            <div class="justify-center text-neutral-800 text-base font-medium leading-[57.6px]">
+                                <a th:text="${commodity.commodityName}"></a><br/>
+                                <a> x 1</a>
+                            </div>
+                            <div class="justify-center text-green-400 text-xl font-semibold leading-[57.54px] mt-6">
+                                $ <a th:text="${commodity.price}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-green-400 bg-opacity-20 w-[411px] shrink-0 max-w-full h-px mt-36 max-md:mt-10"></div>
+            <div class="flex w-[411px] max-w-full items-stretch justify-between gap-5 text-sm font-medium mt-5">
+                <div class="flex flex-col items-stretch text-zinc-600 whitespace-nowrap tracking-tighter self-start">
+                    <div class="justify-end leading-[183%]">Subtotal</div>
+                    <div class="justify-end leading-[183%] mt-7">Shipping</div>
+                </div>
+                <div class="flex flex-col items-stretch text-neutral-800 text-right">
+                    <div class="justify-end leading-[183%] tracking-tighter self-end">$ <a th:text="${order.orderAmount}"></a></div>
+                    <div class="justify-end leading-[183%] mt-7">Free Shipping</div>
+                </div>
+            </div>
+            <div class="bg-green-400 bg-opacity-20 w-[411px] shrink-0 max-w-full h-px mt-9"></div>
+            <div class="flex w-[411px] max-w-full items-stretch justify-between items-center gap-5 font-medium tracking-tighter mt-4">
+                <div class="justify-end text-sm leading-6 self-start">Total</div>
+                <div class="justify-end text-right text-2xl leading-6">$ <a th:text="${order.orderAmount}"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-3/5 flex place-items-center mx-auto" th:if="${success} == 0">
+    <div class="flex flex-col place-items-center mx-auto my-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#d97d67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>
+        <h1 class="justify-center text-neutral-800 text-center text-2xl font-medium leading-[57.72px] tracking-tighter mt-6">Your order is still processing ...</h1>
+        <div class="text-zinc-500 text-sm text-center font-light leading-4 mt-7 max-md:max-w-full">
+            <a>Please refresh the page later.</a>
+        </div>
+        <div class="text-center text-lg leading-6 tracking-tighter underline mt-9">Back to shopping</div>
+    </div>
+</div>
+
+<div class="bg-neutral-800 flex flex-col justify-center items-center px-16 py-12 max-md:max-w-full max-md:px-5">
+    <div class="flex w-full max-w-[1110px] flex-col items-stretch mt-2.5 mb-12 max-md:max-w-full max-md:mb-10">
+        <div class="bg-white shrink-0 h-px max-md:max-w-full"></div>
+        <div class="flex w-full justify-between gap-5 pr-11 items-start max-md:max-w-full max-md:flex-wrap max-md:pr-5">
+            <div class="flex flex-col items-stretch gap-y-8 mt-14">
+                <img loading="lazy" src="/img/_/vivavend-white.png" class="aspect-[2.5] object-contain object-center w-2/3 justify-center items-center overflow-hidden z-[1]" />
+                <div class="text-white text-xl leading-6 tracking-tight -mt-1.5">Shop Viva, Live Viva!</div>
+            </div>
+            <div class="mt-14 self-end max-md:max-w-full max-md:mt-10">
+                <form>
+                    <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                        <div class="flex flex-col items-stretch w-[30%] max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">Discovery</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">New season</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Most searched</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Most selled</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-[30%] ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7">About</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Help</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Shipping</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 mt-8">Affiliate</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-stretch w-2/5 ml-5 max-md:w-full max-md:ml-0">
+                            <div class="flex grow flex-col items-stretch max-md:mt-10">
+                                <div class="text-green-400 text-base font-medium leading-7 whitespace-nowrap">Info</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Contact us</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Privacy Policies</div>
+                                <div class="text-neutral-200 text-base font-medium leading-7 whitespace-nowrap mt-8">Terms & Conditions</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script th:inline="javascript">
+    var user = [[${user}]];
+    $(document).ready(function(){
+        if(user != null) {
+            var userId = user.userId;
+            $('#navbar-placeholder').load('/loggedInHeader/' + userId);
+        } else {
+            $('#navbar-placeholder').load('/header');
+        }
+    });
+</script>
+</body>
+</html>

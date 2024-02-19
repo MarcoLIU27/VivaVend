@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>商品列表</title>
+    <link rel="icon" href="img/qiuzhilogo.png">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages-seckill-index.css" />
+
+</head>
+<body>
+<div class="div">
+    <div class="div-2">
+        <img
+                loading="lazy"
+                srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c68666abd3a519de6246aa92fc8f4b07741650267cef55fe82d9384dc86aaeb7?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                class="img"
+        />
+        <div class="div-3">
+            <div class="div-4">
+                <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/245590a6291583a50ee165327ea09f94e4a7e687ba7d67c01adfd499223da930?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                        class="img-2"
+                />
+                <div class="div-5">
+                    <div class="div-6">Discovery</div>
+                    <img
+                            loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d4773d8586928720c392ba2b5b2eb7b5636f82e5f5464a56194f2d76dd5b7c5?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-3"
+                    />
+                    <div class="div-7">About</div>
+                </div>
+                <div class="div-8">
+                    <img
+                            loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a79aeb5bd7022e04c16cd52a0cc5a716813bddac934e39c7fa11e6ffe921bf6?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-4"
+                    />
+                    <img
+                            loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/94539a788c8ed14ae1ece9640c7770a68c9666ca1e7506c16b2d49f877785b56?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-5"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="div-9">
+            <div class="div-10">
+                🌱
+                <br />
+                The nature candle
+            </div>
+            <div class="div-11">
+                All handmade with natural soy wax, Candleaf is a companion for all your
+                pleasure moments
+            </div>
+            <div class="div-12">Discovery our collection</div>
+        </div>
+    </div>
+    <div class="div-13">Products</div>
+    <div class="div-14">Order it for you or for your beloved ones</div>
+    <div class="div-15">
+        <div class="div-16">
+            <div class="column">
+                <div class="div-17">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/a9c6e944fa454039b5350358748573d45249ba12feb7087553570e65c1e57760?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-6"
+                    />
+                    <div class="div-18">
+                        <div class="div-19">Spiced Mint</div>
+                        <div class="div-20">9.99$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-2">
+                <div class="div-21">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/065d0c1cb4eee1220c0ea8d0609818908f3e274a928fed1b207f0a968bb5330f?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-7"
+                    />
+                    <div class="div-22">
+                        <div class="div-23">Sweet Straweberry</div>
+                        <div class="div-24">9.99$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-3">
+                <div class="div-25">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/690bfa0f9e2f2b66d6e825b7eee69bc6c594d2d032145d59daaf6da0355c2009?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-8"
+                    />
+                    <div class="div-26">
+                        <div class="div-27">Cool Blueberries</div>
+                        <div class="div-28">9.99$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-4">
+                <div class="div-29">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/7a6302056c81a55a1b52529e506a76d2861ad7ada85cc5ca635b5a05f4e850a1?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-9"
+                    />
+                    <div class="div-30">
+                        <div class="div-31">Juicy Lemon</div>
+                        <div class="div-32">9.99$</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div-33">
+        <div class="div-34">
+            <div class="column">
+                <div class="div-35">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/2b46dcda626dede5af5228620b212424b5cd5ba52f59d9f2dc52f21ac84a8a24?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-10"
+                    />
+                    <div class="div-36">
+                        <div class="div-37">Product name</div>
+                        <div class="div-38">9.99$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-5">
+                <div class="div-39">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/1b1362bac681f8f889477a61fdb67216e4ccf4acd8d0dbbc885c35a9bfa011f0?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-11"
+                    />
+                    <div class="div-40">
+                        <div class="div-41">Fragrant Cinnamon</div>
+                        <div class="div-42">9.99$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-6">
+                <div class="div-43">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/58cb630875d46175e872b092e113ff1ecfad12c6b71304c51a3ba4e6097c80f1?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-12"
+                    />
+                    <div class="div-44">
+                        <div class="div-45">Summer Cherries</div>
+                        <div class="div-46">9.99$</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-7">
+                <div class="div-47">
+                    <img
+                            loading="lazy"
+                            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/90d7809f439961ea6f8cfdcf86373297d8374f8c5330d4908d00af2a07d41283?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-13"
+                    />
+                    <div class="div-48">
+                        <div class="div-49">Clean Lavander</div>
+                        <div class="div-50">9.99$</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div-51">
+        <div class="div-52">
+            <div class="div-53">Testimonials</div>
+            <div class="div-54">Some quotes from our happy customers</div>
+            <div class="div-55">
+                <div class="div-56">
+                    <div class="column-8">
+                        <div class="div-57">
+                            <img
+                                    loading="lazy"
+                                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/dcaafe745d4529795d408275c8e924beee84480931b7d792b37c3e1f4f148404?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                                    class="img-14"
+                            />
+                            <img
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1d14348ffd7c3704c60090ed3ee5e03d5fe0168c5c9cd86192ee905c320e6cc?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                                    class="img-15"
+                            />
+                            <div class="div-58">“I love it! No more air fresheners”</div>
+                            <div class="div-59">Luisa</div>
+                        </div>
+                    </div>
+                    <div class="column-9">
+                        <div class="div-60">
+                            <img
+                                    loading="lazy"
+                                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/7063b4aaca27393f33915c60d510f91bb0bbc25e4608f3ab8f8dd963b32ff16f?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                                    class="img-16"
+                            />
+                            <img
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/befb25a7196e5b6620151489e209487757aa47c312b89dcdde26644377acac6b?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                                    class="img-17"
+                            />
+                            <div class="div-61">“Raccomended for everyone”</div>
+                            <div class="div-62">Edoardo</div>
+                        </div>
+                    </div>
+                    <div class="column-10">
+                        <div class="div-63">
+                            <img
+                                    loading="lazy"
+                                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5b7ed1b766e27004ee1c949063ea00fc21c3de8b531e666a13b18bde4dc08fa5?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                                    class="img-18"
+                            />
+                            <img
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b115dff4babcf267d3042641552fb52a79318189dd53945216980ac908a8111?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                                    class="img-19"
+                            />
+                            <div class="div-64">
+                                “Looks very natural, the smell is awesome”
+                            </div>
+                            <div class="div-65">Mart</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div-66">
+        <div class="div-67">
+            <div class="div-68"></div>
+            <div class="div-69">
+                <div class="div-70">
+                    <img
+                            loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ac791e7ddcd7cceb8dffee2636bc18d26aeb4b876c87cc8ad368a1a4a9fa6632?apiKey=04b96a35d62641b58ada2792ce49196a&"
+                            class="img-20"
+                    />
+                    <div class="div-71">
+                        Your natural candle made for your home and for your wellness.
+                    </div>
+                </div>
+                <div class="div-72">
+                    <div class="div-73">
+                        <div class="column-11">
+                            <div class="div-74">
+                                <div class="div-75">Discovery</div>
+                                <div class="div-76">New season</div>
+                                <div class="div-77">Most searched</div>
+                                <div class="div-78">Most selled</div>
+                            </div>
+                        </div>
+                        <div class="column-12">
+                            <div class="div-79">
+                                <div class="div-80">About</div>
+                                <div class="div-81">Help</div>
+                                <div class="div-82">Shipping</div>
+                                <div class="div-83">Affiliate</div>
+                            </div>
+                        </div>
+                        <div class="column-13">
+                            <div class="div-84">
+                                <div class="div-85">Info</div>
+                                <div class="div-86">Contact us</div>
+                                <div class="div-87">Privacy Policies</div>
+                                <div class="div-88">Terms & Conditions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    .div {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .div-2 {
+      disply: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      min-height: 780px;
+      width: 100%;
+      padding-bottom: 50px;
+    }
+    @media (max-width: 991px) {
+      .div-2 {
+        max-width: 100%;
+      }
+    }
+    .img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .div-3 {
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 21px 60px;
+    }
+    @media (max-width: 991px) {
+      .div-3 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    .div-4 {
+      display: flex;
+      width: 100%;
+      max-width: 1106px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    @media (max-width: 991px) {
+      .div-4 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+    .img-2 {
+      aspect-ratio: 3.71;
+      object-fit: contain;
+      object-position: center;
+      width: 126px;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      align-self: stretch;
+      max-width: 100%;
+    }
+    .div-5 {
+      display: flex;
+      justify-content: space-between;
+      gap: 11px;
+      margin: auto 0;
+    }
+    .div-6 {
+      justify-content: center;
+      color: var(--black, #272727);
+      text-align: center;
+      flex-grow: 1;
+      white-space: nowrap;
+      font: 500 16px Roboto, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-6 {
+        white-space: initial;
+      }
+    }
+    .img-3 {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 10px;
+      overflow: hidden;
+      align-self: center;
+      max-width: 100%;
+      margin: auto 0;
+    }
+    .div-7 {
+      justify-content: center;
+      color: var(--black, #272727);
+      text-align: center;
+      align-self: start;
+      font: 500 16px Roboto, sans-serif;
+    }
+    .div-8 {
+      align-self: stretch;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .img-4 {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 34px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .img-5 {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 26px;
+      overflow: hidden;
+      align-self: center;
+      max-width: 100%;
+      margin: auto 0;
+    }
+    .div-9 {
+      position: relative;
+      border-radius: 2px;
+      backdrop-filter: blur(12px);
+      background-color: rgba(247, 248, 250, 0.8);
+      align-self: center;
+      display: flex;
+      width: 731px;
+      max-width: 100%;
+      flex-direction: column;
+      margin: 174px 0 95px;
+      padding: 44px 80px;
+    }
+    @media (max-width: 991px) {
+      .div-9 {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+    }
+    .div-10 {
+      justify-content: center;
+      color: #1d252c;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: center;
+      max-width: 365px;
+      font: 500 40px/58px Poppins, sans-serif;
+    }
+    .div-11 {
+      color: #1d252c;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      max-width: 535px;
+      margin: 19px 18px 0;
+      font: 400 18px/26px Helvetica, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-11 {
+        max-width: 100%;
+        margin-right: 10px;
+      }
+    }
+    .div-12 {
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      border-radius: 4px;
+      background-color: var(--green, #56b280);
+      align-self: center;
+      justify-content: center;
+      margin: 52px 0 13px;
+      padding: 8px 44px;
+      font: 500 21px Roboto, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-12 {
+        white-space: initial;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    .div-13 {
+      color: #0b254b;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      letter-spacing: -0.9px;
+      align-self: center;
+      margin-top: 103px;
+      width: 1192px;
+      font: 500 40px/144% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-13 {
+        margin-top: 40px;
+      }
+    }
+    .div-14 {
+      color: var(--dark-1, #5e6e89);
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      letter-spacing: 0.1px;
+      align-self: center;
+      margin-top: 28px;
+      font: 500 18px/153% Poppins, sans-serif;
+    }
+    .div-15 {
+      align-self: center;
+      margin-top: 60px;
+      width: 100%;
+      max-width: 1110px;
+      padding: 0 20px;
+    }
+    @media (max-width: 991px) {
+      .div-15 {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .div-16 {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .div-16 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 0px;
+    }
+    @media (max-width: 991px) {
+      .column {
+        width: 100%;
+      }
+    }
+    .div-17 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-17 {
+        margin-top: 30px;
+      }
+    }
+    .img-6 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-18 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-18 {
+        padding: 0 20px;
+      }
+    }
+    .div-19 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-19 {
+        white-space: initial;
+      }
+    }
+    .div-20 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 9px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .column-2 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-2 {
+        width: 100%;
+      }
+    }
+    .div-21 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      margin-top: 10px;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-21 {
+        margin-top: 40px;
+      }
+    }
+    .img-7 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-22 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-22 {
+        padding: 0 20px;
+      }
+    }
+    .div-23 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-23 {
+        white-space: initial;
+      }
+    }
+    .div-24 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 9px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .column-3 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-3 {
+        width: 100%;
+      }
+    }
+    .div-25 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      margin-top: 10px;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-25 {
+        margin-top: 40px;
+      }
+    }
+    .img-8 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-26 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-26 {
+        padding: 0 20px;
+      }
+    }
+    .div-27 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-27 {
+        white-space: initial;
+      }
+    }
+    .div-28 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 13px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .column-4 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-4 {
+        width: 100%;
+      }
+    }
+    .div-29 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      margin-top: 10px;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-29 {
+        margin-top: 40px;
+      }
+    }
+    .img-9 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-30 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-30 {
+        padding: 0 20px;
+      }
+    }
+    .div-31 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-31 {
+        white-space: initial;
+      }
+    }
+    .div-32 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 9px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .div-33 {
+      align-self: center;
+      margin-top: 30px;
+      width: 100%;
+      max-width: 1110px;
+      padding: 0 20px;
+    }
+    @media (max-width: 991px) {
+      .div-33 {
+        max-width: 100%;
+      }
+    }
+    .div-34 {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .div-34 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+    .div-35 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-35 {
+        margin-top: 30px;
+      }
+    }
+    .img-10 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-36 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-36 {
+        padding: 0 20px;
+      }
+    }
+    .div-37 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-37 {
+        white-space: initial;
+      }
+    }
+    .div-38 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 13px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .column-5 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-5 {
+        width: 100%;
+      }
+    }
+    .div-39 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-39 {
+        margin-top: 30px;
+      }
+    }
+    .img-11 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-40 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-40 {
+        padding: 0 20px;
+      }
+    }
+    .div-41 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-41 {
+        white-space: initial;
+      }
+    }
+    .div-42 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 9px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .column-6 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-6 {
+        width: 100%;
+      }
+    }
+    .div-43 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-43 {
+        margin-top: 30px;
+      }
+    }
+    .img-12 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-44 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-44 {
+        padding: 0 20px;
+      }
+    }
+    .div-45 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-45 {
+        white-space: initial;
+      }
+    }
+    .div-46 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 13px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .column-7 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-7 {
+        width: 100%;
+      }
+    }
+    .div-47 {
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(
+        247.00000047683716,
+        248.0000004172325,
+        250.00000029802322,
+        1
+      );
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      .div-47 {
+        margin-top: 30px;
+      }
+    }
+    .img-13 {
+      aspect-ratio: 1.44;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .div-48 {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 26px;
+    }
+    @media (max-width: 991px) {
+      .div-48 {
+        padding: 0 20px;
+      }
+    }
+    .div-49 {
+      justify-content: center;
+      color: #1d293f;
+      letter-spacing: -0.9px;
+      white-space: nowrap;
+      font: 500 16px/172.5% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-49 {
+        white-space: initial;
+      }
+    }
+    .div-50 {
+      color: var(--green, #56b280);
+      text-align: right;
+      align-self: end;
+      margin-top: 13px;
+      font: 500 20px/138% Roboto, sans-serif;
+    }
+    .div-51 {
+      background-color: rgba(86, 178, 128, 0.1);
+      display: flex;
+      margin-top: 130px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 60px;
+    }
+    @media (max-width: 991px) {
+      .div-51 {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    .div-52 {
+      display: flex;
+      width: 100%;
+      max-width: 1111px;
+      flex-direction: column;
+      margin: 52px 0 39px;
+    }
+    @media (max-width: 991px) {
+      .div-52 {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .div-53 {
+      color: #0b254b;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      letter-spacing: -0.9px;
+      align-self: center;
+      font: 500 40px/144% Poppins, sans-serif;
+    }
+    .div-54 {
+      color: var(--dark-1, #5e6e89);
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      letter-spacing: 0.1px;
+      align-self: center;
+      margin-top: 28px;
+      font: 500 18px/153% Poppins, sans-serif;
+    }
+    .div-55 {
+      margin-top: 37px;
+      padding: 0 1px;
+    }
+    @media (max-width: 991px) {
+      .div-55 {
+        max-width: 100%;
+      }
+    }
+    .div-56 {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .div-56 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+    .column-8 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 33%;
+      margin-left: 0px;
+    }
+    @media (max-width: 991px) {
+      .column-8 {
+        width: 100%;
+      }
+    }
+    .div-57 {
+      border-radius: 6px;
+      box-shadow: 0px 4px 24px 0px rgba(139, 167, 178, 0.16);
+      background-color: #fff;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+      padding: 34px 56px 34px 66px;
+    }
+    @media (max-width: 991px) {
+      .div-57 {
+        margin-top: 30px;
+        padding: 0 20px;
+      }
+    }
+    .img-14 {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 84px;
+      overflow: hidden;
+      align-self: center;
+      max-width: 100%;
+    }
+    .img-15 {
+      aspect-ratio: 6.08;
+      object-fit: contain;
+      object-position: center;
+      width: 146px;
+      overflow: hidden;
+      align-self: center;
+      margin-top: 14px;
+      max-width: 100%;
+    }
+    .div-58 {
+      color: #1d293f;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: stretch;
+      margin-top: 27px;
+      font: 500 22px/29px Poppins, sans-serif;
+    }
+    .div-59 {
+      color: #7c8087;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: center;
+      margin-top: 19px;
+      font: 400 18px Helvetica, sans-serif;
+    }
+    .column-9 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 33%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-9 {
+        width: 100%;
+      }
+    }
+    .div-60 {
+      border-radius: 6px;
+      box-shadow: 0px 4px 24px 0px rgba(139, 167, 178, 0.16);
+      background-color: #fff;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+      padding: 34px 67px 34px 76px;
+    }
+    @media (max-width: 991px) {
+      .div-60 {
+        margin-top: 30px;
+        padding: 0 20px;
+      }
+    }
+    .img-16 {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 84px;
+      overflow: hidden;
+      align-self: center;
+      max-width: 100%;
+    }
+    .img-17 {
+      aspect-ratio: 6.08;
+      object-fit: contain;
+      object-position: center;
+      width: 146px;
+      overflow: hidden;
+      align-self: center;
+      margin-top: 14px;
+      max-width: 100%;
+    }
+    .div-61 {
+      color: #1d293f;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: stretch;
+      margin-top: 27px;
+      font: 500 22px/29px Poppins, sans-serif;
+    }
+    .div-62 {
+      color: #7c8087;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: center;
+      margin-top: 13px;
+      font: 400 18px Helvetica, sans-serif;
+    }
+    .column-10 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 33%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-10 {
+        width: 100%;
+      }
+    }
+    .div-63 {
+      border-radius: 6px;
+      box-shadow: 0px 4px 24px 0px rgba(139, 167, 178, 0.16);
+      background-color: #fff;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      width: 100%;
+      padding: 34px 42px 34px 52px;
+    }
+    @media (max-width: 991px) {
+      .div-63 {
+        margin-top: 30px;
+        padding: 0 20px;
+      }
+    }
+    .img-18 {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 84px;
+      overflow: hidden;
+      align-self: center;
+      max-width: 100%;
+    }
+    .img-19 {
+      aspect-ratio: 6.08;
+      object-fit: contain;
+      object-position: center;
+      width: 146px;
+      overflow: hidden;
+      align-self: center;
+      margin-top: 14px;
+      max-width: 100%;
+    }
+    .div-64 {
+      color: #1d293f;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: stretch;
+      margin-top: 28px;
+      font: 500 22px/29px Poppins, sans-serif;
+    }
+    .div-65 {
+      color: #7c8087;
+      text-align: center;
+      font-feature-settings: "clig" off, "liga" off;
+      align-self: center;
+      margin-top: 19px;
+      font: 400 18px Helvetica, sans-serif;
+    }
+    .div-66 {
+      background-color: var(--black, #272727);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 60px;
+    }
+    @media (max-width: 991px) {
+      .div-66 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    .div-67 {
+      display: flex;
+      width: 100%;
+      max-width: 1110px;
+      flex-direction: column;
+      margin: 9px 0 46px;
+    }
+    @media (max-width: 991px) {
+      .div-67 {
+        max-width: 100%;
+        margin-bottom: 40px;
+      }
+    }
+    .div-68 {
+      background-color: #fff;
+      height: 1px;
+    }
+    @media (max-width: 991px) {
+      .div-68 {
+        max-width: 100%;
+      }
+    }
+    .div-69 {
+      display: flex;
+      width: 100%;
+      padding-right: 43px;
+      align-items: start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    @media (max-width: 991px) {
+      .div-69 {
+        max-width: 100%;
+        flex-wrap: wrap;
+        padding-right: 20px;
+      }
+    }
+    .div-70 {
+      display: flex;
+      flex-direction: column;
+    }
+    .img-20 {
+      aspect-ratio: 2.5;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .div-71 {
+      color: #fff;
+      font-feature-settings: "clig" off, "liga" off;
+      letter-spacing: -0.5px;
+      margin-top: -6px;
+      font: 400 16px/23px Poppins, sans-serif;
+    }
+    .div-72 {
+      align-self: end;
+      margin-top: 52px;
+    }
+    @media (max-width: 991px) {
+      .div-72 {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .div-73 {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .div-73 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+    .column-11 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 30%;
+      margin-left: 0px;
+    }
+    @media (max-width: 991px) {
+      .column-11 {
+        width: 100%;
+      }
+    }
+    .div-74 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+    }
+    @media (max-width: 991px) {
+      .div-74 {
+        margin-top: 40px;
+      }
+    }
+    .div-75 {
+      color: var(--green, #56b280);
+      font: 500 16px/180% Avenir, sans-serif;
+    }
+    .div-76 {
+      color: #e1e1e1;
+      margin-top: 36px;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    .div-77 {
+      color: #e1e1e1;
+      margin-top: 33px;
+      white-space: nowrap;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-77 {
+        white-space: initial;
+      }
+    }
+    .div-78 {
+      color: #e1e1e1;
+      margin-top: 32px;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    .column-12 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 30%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-12 {
+        width: 100%;
+      }
+    }
+    .div-79 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+    }
+    @media (max-width: 991px) {
+      .div-79 {
+        margin-top: 40px;
+      }
+    }
+    .div-80 {
+      color: var(--green, #56b280);
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    .div-81 {
+      color: #e1e1e1;
+      margin-top: 37px;
+      font: 500 16px/180% Avenir, sans-serif;
+    }
+    .div-82 {
+      color: #e1e1e1;
+      margin-top: 29px;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    .div-83 {
+      color: #e1e1e1;
+      margin-top: 28px;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    .column-13 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 40%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .column-13 {
+        width: 100%;
+      }
+    }
+    .div-84 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+    }
+    @media (max-width: 991px) {
+      .div-84 {
+        margin-top: 40px;
+      }
+    }
+    .div-85 {
+      color: var(--green, #56b280);
+      white-space: nowrap;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-85 {
+        white-space: initial;
+      }
+    }
+    .div-86 {
+      color: #e1e1e1;
+      margin-top: 38px;
+      white-space: nowrap;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-86 {
+        white-space: initial;
+      }
+    }
+    .div-87 {
+      color: #e1e1e1;
+      margin-top: 32px;
+      white-space: nowrap;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-87 {
+        white-space: initial;
+      }
+    }
+    .div-88 {
+      color: #e1e1e1;
+      margin-top: 28px;
+      white-space: nowrap;
+      font: 500 16px/180% Poppins, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .div-88 {
+        white-space: initial;
+      }
+    }
+    .div-89 {
+      background-color: var(--layer, #e5e5e5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 29px 60px;
+    }
+    @media (max-width: 991px) {
+      .div-89 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    .div-90 {
+      display: flex;
+      width: 100%;
+      max-width: 1110px;
+      align-items: start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    @media (max-width: 991px) {
+      .div-90 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+    .div-91 {
+      color: var(--dark-1, #5e6e89);
+      flex-grow: 1;
+      flex-basis: auto;
+      font: 400 16px/175% Poppins, sans-serif;
+    }
+    .div-92 {
+      color: var(--dark-1, #5e6e89);
+      text-align: right;
+      align-self: stretch;
+      width: 274px;
+      font: 400 16px/28px Avenir, sans-serif;
+    }
+</style>
+</html>
